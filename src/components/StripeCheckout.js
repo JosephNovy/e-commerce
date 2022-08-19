@@ -49,12 +49,7 @@ const CheckoutForm = () => {
         JSON.stringify({ cart, shipping_fee, total_amount })
       );
       console.log(data);
-    } catch (error) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ msg: error.message }),
-      };
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     createPaymentIntent();
