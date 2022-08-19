@@ -11,7 +11,7 @@ const CheckoutPage = () => {
     <main>
       <PageHero title="checkout" />
       <Wrapper className="page">
-        {cart.legth < 1 ? (
+        {cart.length < 1 ? (
           <div className="empty">
             <h2>your cart is empty</h2>
             <Link to="/products" className="btn">
@@ -21,10 +21,16 @@ const CheckoutPage = () => {
         ) : (
           <StripeCheckout />
         )}
-        <h1>checkout here</h1>
       </Wrapper>
     </main>
   );
 };
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .empty {
+    text-align: center;
+  }
+`;
 export default CheckoutPage;
